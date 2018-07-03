@@ -1,15 +1,13 @@
 import React from 'react'
 
-class DoctorsListItem extends React.Component {
+class DoctorListItem extends React.Component {
     constructor(props){
         super(props)
     }
 
     render(){
-        return(
-            <h1>This is a list item</h1>
-        )
+            <li>{this.props.name}</li>
     }
 }
 
-export default DoctorsListItem
+export default DoctorListItem

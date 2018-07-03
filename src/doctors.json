@@ -1,4 +1,4 @@
-const Data = [
+[
     {
       "name": "Lesa Black",
       "rating": 2.7,
@@ -1100,5 +1100,3 @@ const Data = [
       "street": "Lott Avenue"
     }
   ]
-
-  export default Data
