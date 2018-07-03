@@ -1,7 +1,7 @@
 import React from 'react';
 import DoctorListItem from './doctorsListItem';
 
-const DoctorList = ({doctors}) => (
+const DoctorList = ({doctors, handleSelect}) => (
     <table>
         <thead>
             <tr>
@@ -11,14 +11,12 @@ const DoctorList = ({doctors}) => (
                 <th>Rating</th>
             </tr>
         </thead>
-        <tbody>
-        {
-            doctors.map((doctor, idx) => {
+        <tbody >
+        {doctors.map((doctor, idx) => {
                 return(
-                    <DoctorListItem key={idx} doctor={doctor} />
+                    <DoctorListItem onClick={handleSelect} key={idx} doctor={doctor} />
                 )
-            })
-        }
+            })}
         </tbody>
     </table>
 

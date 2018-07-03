@@ -8,6 +8,12 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+tbody {
+    overflow-y:scroll;
+   height:100px;
+
+}
+
 div.table-title {
    display: block;
   margin: auto;
