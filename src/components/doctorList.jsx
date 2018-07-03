@@ -1,24 +1,27 @@
 import React from 'react';
+import DoctorListItem from './doctorsListItem';
 
-class DoctorList extends React.Component{
-    constructor(props){
-        super(props)
+const DoctorList = ({doctors}) => (
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Speciality</th>
+                <th>Location</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+        {
+            doctors.map((doctor, idx) => {
+                return(
+                    <DoctorListItem key={idx} doctor={doctor} />
+                )
+            })
+        }
+        </tbody>
+    </table>
 
-    }
-
-
-    
-
-    render(){
-
-        return(
-            <div>
-                <h1>Hello</h1>
-                <ul>
-                </ul>
-            </div>
-        )
-    }
-}
+)
 
 export default DoctorList
