@@ -7,29 +7,52 @@ class DoctorList extends Component {
         super(props)
 
         this.state ={
-            filter: ""
+            filter: "",
+            key: ""
         }
 
         this.specialityFilter = this.specialityFilter.bind(this);
+        this.cityFilter = this.cityFilter.bind(this);
     }
 
     renderList(doctors, setCurrentDoctor){
 
-        return doctors.map((doctor, idx) => {
-            return (
-            <tr key={idx}  onClick={() => setCurrentDoctor(idx)}>
-                <DoctorListItem doctor={doctor} />
-            </tr>
-            )
-        })
+        if(this.state.filter){
+            const filteredDoctors = doctors.filter((doctor) => doctor[this.state.key] === this.state.filter )
+            
+            return filteredDoctors.map((doctor, idx) => {
+                return (
+                <tr key={idx}  onClick={() => setCurrentDoctor(idx)}>
+                    <DoctorListItem doctor={doctor} />
+                </tr>
+                )
+            })
+
+        } else {
+            return doctors.map((doctor, idx) => {
+                return (
+                <tr key={idx}  onClick={() => setCurrentDoctor(idx)}>
+                    <DoctorListItem doctor={doctor} />
+                </tr>
+                )
+            })
+        }
     }
 
-    specialityFilter(e){
+    specialityFilter(e,){
         e.preventDefault()
-        this.setState({filter: e.currentTarget.innerText})
+        this.setState({filter: e.currentTarget.innerText , key: "speciality"})
     }
+
+    cityFilter(e){
+        e.preventDefault()
+        this.setState({filter: e.currentTarget.innerText, key: "city"})
+    }
+
+    
 
     render(){
+        console.log(this.state)
         return(
             <div className="doctor-list-container">
                 <table className="doctor-list-table">
@@ -45,7 +68,16 @@ class DoctorList extends Component {
                                         <li onClick={this.specialityFilter}>Dentistry</li>
                                     </div>
                             </i></th>
-                            <th>City<i className="fas fa-caret-down"></i></th>
+                            <th>City<i className="speciality-button fas fa-caret-down">
+                                <div className="speciality-dropdown">
+                                    <li onClick={this.cityFilter}>Walnut Creek</li>
+                                    <li onClick={this.cityFilter}>Concord</li>
+                                    <li onClick={this.cityFilter}>San Francisco</li>
+                                    <li onClick={this.cityFilter}>Santa Clara</li>
+                                    <li onClick={this.cityFilter}>Oakland</li>
+                                    <li onClick={this.cityFilter}>San Jose</li>
+                                </div>
+                            </i></th>
                             <th>Rating<i className="fas fa-caret-down"></i></th>
                             <th>Gender</th>
                         </tr>
