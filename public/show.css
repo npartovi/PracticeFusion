@@ -19,3 +19,23 @@
     border-bottom:4px solid #9ea7af;
 }
 
+.doctor-show-container p {
+    font-family: "Roboto", helvetica, arial, sans-serif;
+    font-size: 23px;
+    font-weight: 200;
+    padding: 5px;
+    border-bottom: 1px solid #C1C3D1;
+    
+}
+
+.similar-doctors {
+    margin-top: 10px;
+}
+
+.doctor-show-container p:nth-child(odd) {
+    background: #E8E8E8;
+}
+
+.doctor-show-container p:nth-child(even) {
+    background: #FFFFFF;
+}
