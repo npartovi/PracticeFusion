@@ -13,16 +13,16 @@ class DoctorShow extends Component{
     renderDoctorDetails(context){
       
         const selectedDoctor = context.doctors[context.currentDoctor]
-        const simliarDoctors = context.doctors.filter((doctor) => doctor.speciality === selectedDoctor.speciality && doctor.name !== selectedDoctor.name)
-                                                .sort((a,b) => {
-                                                    return b.rating - a.rating
-                                                }).map((doctor, idx) => {
-                                                    return( 
-                                                    <tr key={idx}>
-                                                        <DoctorRelatedItem  doctor={doctor} />
-                                                    </tr>
-                                                    )
-                                                })
+        const simliarDoctors = context.doctors
+                            .filter((doctor) => doctor.speciality === selectedDoctor.speciality && doctor.name !== selectedDoctor.name)
+                            .sort((a,b) => {return b.rating - a.rating})
+                            .map((doctor, idx) => {
+                                return( 
+                                    <tr key={idx}>
+                                        <DoctorRelatedItem  doctor={doctor} />
+                                    </tr>
+                                    )
+                            })
             
         return (
             <div className="selected-doctor-container">

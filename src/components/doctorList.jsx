@@ -18,10 +18,6 @@ class DoctorList extends Component {
     }
 
 
-    renderFilteredList(){
-        
-    }
-
     renderList(doctors, setCurrentDoctor){
 
         if(this.state.filter){
@@ -37,9 +33,9 @@ class DoctorList extends Component {
 
         } else {
 
-            if(this.state.sorted == "desc"){
+            if(this.state.sorted === "desc"){
                 doctors = doctors.sort((a, b) => a.rating - b.rating )
-            } else if (this.state.sorted == "asc"){
+            } else if (this.state.sorted === "asc"){
                 doctors = doctors.sort((a,b) => b.rating - a.rating )
             }
 
@@ -67,7 +63,7 @@ class DoctorList extends Component {
 
     ratingFilter(e){
         e.preventDefault()
-        const toggle = !this.state.sorted || this.state.sorted == "desc" ? "asc" : "desc"
+        const toggle = !this.state.sorted || this.state.sorted === "desc" ? "asc" : "desc"
         this.setState({sorted: toggle, filter: "", key: ""})
     }
 

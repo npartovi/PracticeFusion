@@ -18,7 +18,10 @@ table {
   width: 100%
 }
 
-
+div#doctor-list-wrapper {
+  height: 650px;
+  overflow: auto;
+}
 
 .similar-doctors-wrapper {
   height: 317px;
@@ -70,7 +73,7 @@ th {
   border-right: 1px solid #343a45;
   font-size:23px;
   font-weight: 100;
-  padding:24px;
+  padding:21px;
   text-align:left;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   vertical-align:middle;
@@ -169,7 +172,7 @@ tr.doctor-row {
 }
 
 i.fas.fa-caret-down {
-  margin-left: 17px;
+  margin-left: 5px;
   cursor: pointer;
 }
 
@@ -204,10 +207,3 @@ i.fas.fa-caret-down:hover {
   background: white;
 }
 
-thead, tbody { display: block; }
-
-tbody {
-    height: 550px;       /* Just for the demo          */
-    overflow-y: auto;    /* Trigger vertical scroll    */
-    overflow-x: hidden;  /* Hide the horizontal scroll */
-}
