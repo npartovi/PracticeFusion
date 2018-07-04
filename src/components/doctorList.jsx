@@ -36,13 +36,22 @@ class DoctorList extends Component {
             })
 
         } else {
-            return doctors.map((doctor, idx) => {
+
+            if(this.state.sorted == "desc"){
+                doctors = doctors.sort((a, b) => a.rating - b.rating )
+            } else if (this.state.sorted == "asc"){
+                doctors = doctors.sort((a,b) => b.rating - a.rating )
+            }
+
+            const doctorList =  doctors.map((doctor, idx) => {
                 return (
                 <tr key={idx}  onClick={() => setCurrentDoctor(idx)}>
                     <DoctorListItem doctor={doctor} />
                 </tr>
                 )
             })
+
+            return doctorList
         }
     }
 
@@ -58,6 +67,8 @@ class DoctorList extends Component {
 
     ratingFilter(e){
         e.preventDefault()
+        const toggle = !this.state.sorted || this.state.sorted == "desc" ? "asc" : "desc"
+        this.setState({sorted: toggle})
     }
 
     
