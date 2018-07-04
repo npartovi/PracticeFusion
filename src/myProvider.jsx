@@ -6,12 +6,11 @@ export const MyContext = React.createContext();
 class MyProvider extends Component {
   state = {
     doctors: doctors,
-    currentDoctor: null,
+    currentDoctor: 0,
     setCurrentDoctor: (idx) => this.setState({currentDoctor: idx})
   }
 
   render(){
- 
     return(
     <MyContext.Provider value={{
         doctors: this.state.doctors,

@@ -10,21 +10,9 @@ class DoctorShow extends Component{
 
 
     renderDoctorDetails(context){
-        console.log(context.currentDoctor)
-        if(!context.currentDoctor){
-            return null
-        }
 
-        return context.doctors.map((doctor, idx) => {
-            if(idx === context.currentDoctor){
-                return (
-                    <ul key={idx}>
-                        <DoctorShowItem doctor={doctor} />
-                    </ul>
-                )
-            }
-        })
-        
+        const selectedDoctor = context.doctors[context.currentDoctor]
+        return <DoctorShowItem doctor={selectedDoctor} />
     }
 
 
@@ -35,7 +23,6 @@ class DoctorShow extends Component{
             </MyContext.Consumer>
         )
     }
-
 }
 
 export default DoctorShow

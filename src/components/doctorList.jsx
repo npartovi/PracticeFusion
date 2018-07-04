@@ -17,23 +17,38 @@ class DoctorList extends Component {
         })
     }
 
+    
+
     render(){
         return(
-            <table>
-                 <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Speciality</th>
-                        <th>City</th>
-                        <th>Rating</th>
-                    </tr>
-                </thead>
-                <tbody>
-                <MyContext.Consumer>
-                    {(context) => this.renderList(context.doctors, context.setCurrentDoctor)}
-                </MyContext.Consumer>
-                </tbody>
-            </table>
+            <div className="doctor-list-container">
+                <table className="doctor-list-table">
+                    <thead>
+                        <tr>
+                            <th>Name<i class="fas fa-caret-down"></i></th>
+                            <th>Speciality<i class="speciality-button fas fa-caret-down">
+                                <div className="speciality-dropdown">
+                                        <li>Asc</li>
+                                        <li>Desc</li>
+                                        <li>San Francisco</li>
+                                        <li>Santa Clara</li>
+                                        <li>Oakland</li>
+                                        <li>Walnut Creek</li>
+                                        <li>San Jose</li>
+                                        <li>Concord</li>
+                                    </div>
+                            </i></th>
+                            <th>City<i class="fas fa-caret-down"></i></th>
+                            <th>Rating<i class="fas fa-caret-down"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <MyContext.Consumer>
+                        {(context) => this.renderList(context.doctors, context.setCurrentDoctor)}
+                    </MyContext.Consumer>
+                    </tbody>
+                </table>
+            </div>
         )
     }
 }

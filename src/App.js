@@ -9,8 +9,12 @@ class App extends Component {
     return (
       <MyProvider>
       <div className="main-app-container">
-        <DoctorList />
-        <DoctorShow />
+        <div className="doctor-list-container">
+          <DoctorList />
+        </div>
+        <div className="doctor-show-container">
+          <DoctorShow />
+        </div>
       </div>
       </MyProvider>
     );

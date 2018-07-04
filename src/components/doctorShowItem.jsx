@@ -8,6 +8,11 @@ const DoctorShowItem = ({doctor}) => {
             <li>{doctor.gender}</li>
             <li>{doctor.email}</li>
             <li>{doctor.city}</li>
+            <li>{doctor.phone}</li>
+            <li>{doctor.state}</li>
+            <li>{doctor.street}</li>
+            <li>{doctor.speciality}</li>
+
         </Fragment>
     )
     
