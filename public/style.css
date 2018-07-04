@@ -18,6 +18,15 @@ table {
   width: 100%
 }
 
+div#doctor-list-wrapper {
+  height: 650px;
+  overflow: auto;
+}
+
+.doctor-list {
+  position: relative;
+}
+
 div.table-title {
    display: block;
   margin: auto;
@@ -116,7 +125,7 @@ tr:last-child td:last-child {
  
 td {
   background:#FFFFFF;
-  padding:20px;
+  padding:10px 20px;
   text-align:left;
   vertical-align:middle;
   font-weight:300;

@@ -24,9 +24,6 @@ class DoctorShow extends Component{
                                                     )
                                                 })
             
-                
-        
-
         return (
             <div className="selected-doctor-container">
                 <div>
