@@ -29,7 +29,7 @@ class DoctorList extends Component {
             
             return filteredDoctors.map((doctor, idx) => {
                 return (
-                <tr key={idx}  onClick={() => setCurrentDoctor(idx)}>
+                <tr className="doctor-row" key={idx}  onClick={() => setCurrentDoctor(idx)}>
                     <DoctorListItem doctor={doctor} />
                 </tr>
                 )
@@ -45,7 +45,7 @@ class DoctorList extends Component {
 
             const doctorList =  doctors.map((doctor, idx) => {
                 return (
-                <tr key={idx}  onClick={() => setCurrentDoctor(idx)}>
+                <tr className="doctor-row" key={idx}  onClick={() => setCurrentDoctor(idx)}>
                     <DoctorListItem doctor={doctor} />
                 </tr>
                 )

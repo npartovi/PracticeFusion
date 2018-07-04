@@ -33,6 +33,7 @@ class DoctorShow extends Component{
 
                 <div className="similar-doctors">
                     <h1>Similar doctors</h1>
+                    <div className="similar-doctors-wrapper">
                     <table>
                         <thead>
                         <tr>
@@ -46,6 +47,7 @@ class DoctorShow extends Component{
                             {simliarDoctors}
                         </tbody>
                     </table>
+                    </div>
                 </div>
             </div>
         )

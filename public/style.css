@@ -23,6 +23,11 @@ div#doctor-list-wrapper {
   overflow: auto;
 }
 
+.similar-doctors-wrapper {
+  height: 265px;
+  overflow-y: scroll;
+}
+
 .doctor-list {
   position: relative;
 }
@@ -160,6 +165,10 @@ td.text-center {
 
 td.text-right {
   text-align: right;
+}
+
+tr.doctor-row {
+  cursor: pointer;
 }
 
 i.fas.fa-caret-down {
