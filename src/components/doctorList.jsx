@@ -11,7 +11,6 @@ class DoctorList extends Component {
             key: "",
             sorted: ""
         }
-
         this.specialityFilter = this.specialityFilter.bind(this);
         this.cityFilter = this.cityFilter.bind(this);
         this.ratingFilter = this.ratingFilter.bind(this);
@@ -19,7 +18,6 @@ class DoctorList extends Component {
 
 
     renderList(doctors, setCurrentDoctor){
-
         if(this.state.filter){
             const filteredDoctors = doctors.filter((doctor) => doctor[this.state.key] === this.state.filter )
             
@@ -30,15 +28,13 @@ class DoctorList extends Component {
                 </tr>
                 )
             })
-
         } else {
-
             if(this.state.sorted === "desc"){
                 doctors = doctors.sort((a, b) => a.rating - b.rating )
             } else if (this.state.sorted === "asc"){
                 doctors = doctors.sort((a,b) => b.rating - a.rating )
             }
-
+            
             const doctorList =  doctors.map((doctor, idx) => {
                 return (
                 <tr className="doctor-row" key={idx}  onClick={() => setCurrentDoctor(idx)}>
