@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import DoctorList from './components/doctorList';
+import DoctorShow from './components/doctorShow';
 import MyProvider from './myProvider';
+
 
 class App extends Component {
   render() {
@@ -8,7 +10,7 @@ class App extends Component {
       <MyProvider>
       <div className="main-app-container">
         <DoctorList />
-        <DoctorShowPage />
+        <DoctorShow />
       </div>
       </MyProvider>
     );

@@ -11,12 +11,12 @@ class MyProvider extends Component {
   }
 
   render(){
-      console.log(this.state.currentDoctor)
-      
+ 
     return(
     <MyContext.Provider value={{
         doctors: this.state.doctors,
-        setCurrentDoctor: this.state.setCurrentDoctor
+        setCurrentDoctor: this.state.setCurrentDoctor,
+        currentDoctor: this.state.currentDoctor
         }}> 
         {this.props.children}
     </MyContext.Provider>
