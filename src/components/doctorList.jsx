@@ -57,18 +57,18 @@ class DoctorList extends Component {
 
     specialityFilter(e,){
         e.preventDefault()
-        this.setState({filter: e.currentTarget.innerText , key: "speciality"})
+        this.setState({filter: e.currentTarget.innerText , key: "speciality", sorted: ""})
     }
 
     cityFilter(e){
         e.preventDefault()
-        this.setState({filter: e.currentTarget.innerText, key: "city"})
+        this.setState({filter: e.currentTarget.innerText, key: "city", sorted: ""})
     }
 
     ratingFilter(e){
         e.preventDefault()
         const toggle = !this.state.sorted || this.state.sorted == "desc" ? "asc" : "desc"
-        this.setState({sorted: toggle})
+        this.setState({sorted: toggle, filter: "", key: ""})
     }
 
     
@@ -80,7 +80,7 @@ class DoctorList extends Component {
                     <table className="doctor-list-table">
                         <thead>
                             <tr>
-                                <th>Name<i className="fas fa-caret-down"></i></th>
+                                <th>Name</th>
                                 <th>Speciality<i className="speciality-button fas fa-caret-down">
                                     <div className="speciality-dropdown">
                                             <li onClick={this.specialityFilter}>Surgery</li>
