@@ -1,6 +1,6 @@
 # Practice Fusion Coding Challenge
 
-## Total Time Spent
+- Total Time Spent
     - logic & coding: 4hrs
     - styling: 2hrs
     - datasource: 2hr
