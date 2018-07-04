@@ -19,9 +19,25 @@ class DoctorShow extends Component{
         console.log(simliarDoctors)
 
         return (
-            <div>
-            <DoctorShowItem doctor={selectedDoctor} />
-            <h1>Similar doctors</h1>
+            <div className="selected-doctor-container">
+                <div>
+                    <h1>Selected Doctor</h1>
+                    <DoctorShowItem doctor={selectedDoctor} />
+                </div>
+
+                <div>
+                    <h1>Similar doctors</h1>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Rating</th>
+                            <th>Speciality</th>
+                            <th>City</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
             </div>
         )
     }

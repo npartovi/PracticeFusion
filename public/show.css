@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+
+.doctor-show-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: white;
+    height: 300px;
+}
+
+
+.selected-doctor-container h1 {
+    background: #1b1e24;
+    color: #D5DDE5;
+    font-size: 23px;
+    font-family: "Roboto", helvetica, arial, sans-serif;
+    font-weight: 400;
+    padding:24px;
+    border-bottom:4px solid #9ea7af;
+}
+
