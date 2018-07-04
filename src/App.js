@@ -1,31 +1,15 @@
 import React, { Component } from 'react';
 import DoctorList from './components/doctorList';
-import doctors from './doctors.json'
-
-
+import MyProvider from './myProvider';
 
 class App extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      doctors: doctors,
-      selectedDoctor: null
-    }
-
-    this.handleSelect = this.handleSelect.bind(this)
-  }
-
-  handleSelect(e){
-    console.log(e.target)
-    console.log('hello')
-    // this.setState({selectedDoctor: e.target })
-  }
-
   render() {
     return (
+      <MyProvider>
       <div className="main-app-container">
-        <DoctorList doctors={this.state.doctors} handleSelect={this.handleSelect} />
+        <DoctorList />
       </div>
+      </MyProvider>
     );
   }
 }
