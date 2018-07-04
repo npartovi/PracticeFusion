@@ -10,9 +10,20 @@ class DoctorShow extends Component{
 
 
     renderDoctorDetails(context){
-
+      
         const selectedDoctor = context.doctors[context.currentDoctor]
-        return <DoctorShowItem doctor={selectedDoctor} />
+        const simliarDoctors = context.doctors.filter((doctor) => doctor.speciality === selectedDoctor.speciality && doctor.name !== selectedDoctor.name)
+                                                .sort((a,b) => {
+                                                    return b.rating - a.rating
+                                                })
+        console.log(simliarDoctors)
+
+        return (
+            <div>
+            <DoctorShowItem doctor={selectedDoctor} />
+            <h1>Similar doctors</h1>
+            </div>
+        )
     }
 
 

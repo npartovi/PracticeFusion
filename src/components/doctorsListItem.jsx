@@ -6,6 +6,7 @@ const DoctorListItem = ({doctor}) => {
                 <td>{doctor.speciality}</td>
                 <td>{doctor.city}</td>
                 <td>{doctor.rating}</td>
+                <td>{doctor.gender}</td>
             </Fragment>
 }
 

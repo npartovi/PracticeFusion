@@ -5,9 +5,16 @@ import { MyContext } from '../myProvider';
 class DoctorList extends Component {
     constructor(props){
         super(props)
+
+        this.state ={
+            filter: ""
+        }
+
+        this.specialityFilter = this.specialityFilter.bind(this);
     }
 
     renderList(doctors, setCurrentDoctor){
+
         return doctors.map((doctor, idx) => {
             return (
             <tr key={idx}  onClick={() => setCurrentDoctor(idx)}>
@@ -17,7 +24,10 @@ class DoctorList extends Component {
         })
     }
 
-    
+    specialityFilter(e){
+        e.preventDefault()
+        this.setState({filter: e.currentTarget.innerText})
+    }
 
     render(){
         return(
@@ -25,21 +35,19 @@ class DoctorList extends Component {
                 <table className="doctor-list-table">
                     <thead>
                         <tr>
-                            <th>Name<i class="fas fa-caret-down"></i></th>
-                            <th>Speciality<i class="speciality-button fas fa-caret-down">
+                            <th>Name<i className="fas fa-caret-down"></i></th>
+                            <th>Speciality<i className="speciality-button fas fa-caret-down">
                                 <div className="speciality-dropdown">
-                                        <li>Asc</li>
-                                        <li>Desc</li>
-                                        <li>San Francisco</li>
-                                        <li>Santa Clara</li>
-                                        <li>Oakland</li>
-                                        <li>Walnut Creek</li>
-                                        <li>San Jose</li>
-                                        <li>Concord</li>
+                                        <li onClick={this.specialityFilter}>Surgery</li>
+                                        <li onClick={this.specialityFilter}>Dermatology</li>
+                                        <li onClick={this.specialityFilter}>Physical Therapy</li>
+                                        <li onClick={this.specialityFilter}>Psychiatry</li>
+                                        <li onClick={this.specialityFilter}>Dentistry</li>
                                     </div>
                             </i></th>
-                            <th>City<i class="fas fa-caret-down"></i></th>
-                            <th>Rating<i class="fas fa-caret-down"></i></th>
+                            <th>City<i className="fas fa-caret-down"></i></th>
+                            <th>Rating<i className="fas fa-caret-down"></i></th>
+                            <th>Gender</th>
                         </tr>
                     </thead>
                     <tbody>
