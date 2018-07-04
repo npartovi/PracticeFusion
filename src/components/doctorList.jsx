@@ -5,26 +5,21 @@ import { MyContext } from '../myProvider';
 class DoctorList extends Component {
     constructor(props){
         super(props)
-
-        this.handleCurrentDoctor = this.handleCurrentDoctor.bind(this)
     }
 
-
-    renderList(doctors){
+    renderList(doctors, setCurrentDoctor){
         return doctors.map((doctor, idx) => {
-            return <DoctorListItem key={idx} doctor={doctor} />
+            return (
+            <tr key={idx}  onClick={() => setCurrentDoctor(idx)}>
+                <DoctorListItem doctor={doctor} />
+            </tr>
+            )
         })
     }
 
-    handleCurrentDoctor(idx){
-        console.log(idx)
-
-    }
-
-
     render(){
         return(
-            <div>
+            <table>
                  <thead>
                     <tr>
                         <th>Name</th>
@@ -35,10 +30,10 @@ class DoctorList extends Component {
                 </thead>
                 <tbody>
                 <MyContext.Consumer>
-                    {(context) => this.renderList(context.doctors)}
+                    {(context) => this.renderList(context.doctors, context.setCurrentDoctor)}
                 </MyContext.Consumer>
                 </tbody>
-            </div>
+            </table>
         )
     }
 }

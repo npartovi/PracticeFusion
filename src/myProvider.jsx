@@ -6,13 +6,19 @@ export const MyContext = React.createContext();
 class MyProvider extends Component {
   state = {
     doctors: doctors,
-    currentDoctor: null
+    currentDoctor: null,
+    setCurrentDoctor: (idx) => this.setState({currentDoctor: idx})
   }
 
   render(){
+      console.log(this.state.currentDoctor)
+      
     return(
-    <MyContext.Provider value={{doctors: this.state.doctors}}>
-      {this.props.children}
+    <MyContext.Provider value={{
+        doctors: this.state.doctors,
+        setCurrentDoctor: this.state.setCurrentDoctor
+        }}> 
+        {this.props.children}
     </MyContext.Provider>
     )
   }

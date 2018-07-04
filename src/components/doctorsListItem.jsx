@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 const DoctorListItem = ({doctor}) => {
-    return  <tr>
+    return  <Fragment>
                 <td>{doctor.name}</td>
                 <td>{doctor.speciality}</td>
                 <td>{doctor.city}</td>
                 <td>{doctor.rating}</td>
-            </tr>
+            </Fragment>
 }
 
 export default DoctorListItem

@@ -8,6 +8,7 @@ class App extends Component {
       <MyProvider>
       <div className="main-app-container">
         <DoctorList />
+        <DoctorShowPage />
       </div>
       </MyProvider>
     );
