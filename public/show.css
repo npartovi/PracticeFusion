@@ -4,7 +4,6 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    height: 258px;
 }
 
 
@@ -20,16 +19,13 @@
 
 .doctor-show-container p {
     font-family: "Roboto", helvetica, arial, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 200;
-    padding: 5px;
+    padding: 3px;
     border-bottom: 1px solid #C1C3D1;
     
 }
 
-.similar-doctors {
-    margin-top: 10px;
-}
 
 .doctor-show-container p:nth-child(odd) {
     background: #E8E8E8;
@@ -37,4 +33,8 @@
 
 .doctor-show-container p:nth-child(even) {
     background: #FFFFFF;
+}
+
+.similar-doctors {
+    margin-top: 10px;
 }
