@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {MyContext} from '../myProvider';
 import DoctorShowItem from './doctorShowItem';
+import DoctorRelatedItem from './doctorRelatedItem';
 
 
 class DoctorShow extends Component{
@@ -15,8 +16,16 @@ class DoctorShow extends Component{
         const simliarDoctors = context.doctors.filter((doctor) => doctor.speciality === selectedDoctor.speciality && doctor.name !== selectedDoctor.name)
                                                 .sort((a,b) => {
                                                     return b.rating - a.rating
+                                                }).map((doctor, idx) => {
+                                                    return( 
+                                                    <tr key={idx}>
+                                                        <DoctorRelatedItem  doctor={doctor} />
+                                                    </tr>
+                                                    )
                                                 })
-        console.log(simliarDoctors)
+            
+                
+        
 
         return (
             <div className="selected-doctor-container">
@@ -25,7 +34,7 @@ class DoctorShow extends Component{
                     <DoctorShowItem doctor={selectedDoctor} />
                 </div>
 
-                <div>
+                <div className="similar-doctors">
                     <h1>Similar doctors</h1>
                     <table>
                         <thead>
@@ -36,6 +45,9 @@ class DoctorShow extends Component{
                             <th>City</th>
                         </tr>
                         </thead>
+                        <tbody>
+                            {simliarDoctors}
+                        </tbody>
                     </table>
                 </div>
             </div>

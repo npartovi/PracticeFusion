@@ -1,8 +1,13 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 
-class DoctorRelatedItem = ({doctor}) => {
+const DoctorRelatedItem = ({doctor}) => {
     return (
-        <tr></tr>
+        <Fragment>
+        <td>{doctor.name}</td>
+        <td>{doctor.rating}</td>
+        <td>{doctor.speciality}</td>
+        <td>{doctor.city}</td>
+        </Fragment>
     )
 }
 
