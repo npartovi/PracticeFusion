@@ -1,17 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
 
 body {
-  background-color: #3e94ec;
+  /* background-color: #3e94ec; */
+  background: linear-gradient(#00ADFA, #002467);
   font-family: "Roboto", helvetica, arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   text-rendering: optimizeLegibility;
-}
-
-tbody {
-    overflow-y:scroll;
-   height:100px;
-
+  height: 100vh
 }
 
 table {
@@ -19,12 +15,12 @@ table {
 }
 
 div#doctor-list-wrapper {
-  height: 650px;
+  height: 860px;
   overflow: auto;
 }
 
 .similar-doctors-wrapper {
-  height: 317px;
+  height: 527px;
   overflow-y: scroll;
 }
 
@@ -174,6 +170,7 @@ tr.doctor-row {
 i.fas.fa-caret-down {
   margin-left: 5px;
   cursor: pointer;
+  position: absolute;
 }
 
 i.fas.fa-caret-down:hover {
@@ -207,3 +204,18 @@ i.fas.fa-caret-down:hover {
   background: white;
 }
 
+
+
+@media(max-width: 1280px){
+
+  .similar-doctors-wrapper {
+    height: 334px;
+    overflow-y: scroll;
+  }
+
+  div#doctor-list-wrapper {
+  height: 666px;
+  overflow: auto;
+  }
+
+}
