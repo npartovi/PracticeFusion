@@ -1,4 +1,7 @@
-# Practice Fusion Coding Challenge
+# Practice Fusion Coding Challenge - [Live Demo](https://npartovi.github.io/PracticeFusion/)
+
+
+
 
 - Total Time Spent
     - logic & coding: 4hrs
